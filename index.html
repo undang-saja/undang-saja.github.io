@@ -276,49 +276,67 @@
           <p class="section-copy">
             Momen singkat perjalanan cinta Intan &amp; Aldo.
           </p>
-          <div class="gallery-grid">
-            <figure class="gallery-item reveal" data-anim="zoom">
-              <img
-                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80"
-                alt="Momen pertunangan"
-              />
-              <figcaption class="gallery-caption">Pertemuan</figcaption>
-            </figure>
-            <figure class="gallery-item reveal" data-anim="zoom">
-              <img
-                src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"
-                alt="Sesi prewedding di taman"
-              />
-              <figcaption class="gallery-caption">Prewedding</figcaption>
-            </figure>
-            <figure class="gallery-item reveal" data-anim="zoom">
-              <img
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80"
-                alt="Detail cincin pernikahan"
-              />
-              <figcaption class="gallery-caption">Promise</figcaption>
-            </figure>
-            <figure class="gallery-item reveal" data-anim="zoom">
-              <img
-                src="https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=1200&q=80"
-                alt="Momen bersama keluarga"
-              />
-              <figcaption class="gallery-caption">Keluarga</figcaption>
-            </figure>
-            <figure class="gallery-item reveal" data-anim="zoom">
-              <img
-                src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1200&q=80"
-                alt="Momen romantis pasangan"
-              />
-              <figcaption class="gallery-caption">Together</figcaption>
-            </figure>
-            <figure class="gallery-item reveal" data-anim="zoom">
-              <img
-                src="https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?auto=format&fit=crop&w=1200&q=80"
-                alt="Dekorasi acara pernikahan"
-              />
-              <figcaption class="gallery-caption">The Day</figcaption>
-            </figure>
+          <div class="gallery-slider" id="gallerySlider" aria-label="Slider galeri pernikahan">
+            <button class="gallery-control gallery-control--prev" type="button" aria-label="Foto sebelumnya">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+            </button>
+
+            <div class="gallery-viewport">
+              <div class="gallery-track">
+                <figure class="gallery-item reveal" data-anim="zoom">
+                  <img
+                    src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80"
+                    alt="Momen pertunangan"
+                  />
+                  <figcaption class="gallery-caption">Pertemuan</figcaption>
+                </figure>
+                <figure class="gallery-item reveal" data-anim="zoom">
+                  <img
+                    src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"
+                    alt="Sesi prewedding di taman"
+                  />
+                  <figcaption class="gallery-caption">Prewedding</figcaption>
+                </figure>
+                <figure class="gallery-item reveal" data-anim="zoom">
+                  <img
+                    src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80"
+                    alt="Detail cincin pernikahan"
+                  />
+                  <figcaption class="gallery-caption">Promise</figcaption>
+                </figure>
+                <figure class="gallery-item reveal" data-anim="zoom">
+                  <img
+                    src="https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=1200&q=80"
+                    alt="Momen bersama keluarga"
+                  />
+                  <figcaption class="gallery-caption">Keluarga</figcaption>
+                </figure>
+                <figure class="gallery-item reveal" data-anim="zoom">
+                  <img
+                    src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1200&q=80"
+                    alt="Momen romantis pasangan"
+                  />
+                  <figcaption class="gallery-caption">Together</figcaption>
+                </figure>
+                <figure class="gallery-item reveal" data-anim="zoom">
+                  <img
+                    src="https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?auto=format&fit=crop&w=1200&q=80"
+                    alt="Dekorasi acara pernikahan"
+                  />
+                  <figcaption class="gallery-caption">The Day</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <button class="gallery-control gallery-control--next" type="button" aria-label="Foto berikutnya">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </button>
+
+            <div class="gallery-dots" aria-label="Pilih foto galeri"></div>
           </div>
         </article>
       </section>
