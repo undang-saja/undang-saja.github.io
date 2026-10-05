@@ -31,6 +31,7 @@ body {
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--ivory);
   scroll-behavior: smooth;
+  scroll-padding: clamp(16px, 3vh, 28px);
   background:
     radial-gradient(860px 580px at 10% -10%, rgba(122, 61, 94, 0.26), transparent 70%),
     radial-gradient(950px 640px at 100% 15%, rgba(200, 163, 106, 0.14), transparent 72%),
@@ -719,14 +720,37 @@ body.invitation-open .page {
 
 .section-block {
   margin-top: 0;
+  min-height: min(760px, calc(100dvh - 126px));
+  max-height: calc(100dvh - 112px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background: linear-gradient(150deg, var(--glass) 0%, rgba(24, 15, 26, 0.9) 100%);
   box-shadow: var(--shadow-soft);
   padding: clamp(14px, 2.6vw, 20px);
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-margin: clamp(14px, 3vh, 28px);
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(228, 207, 164, 0.35) transparent;
   transform-style: preserve-3d;
+}
+
+.section-block::-webkit-scrollbar,
+.footer::-webkit-scrollbar {
+  width: 7px;
+}
+
+.section-block::-webkit-scrollbar-track,
+.footer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.section-block::-webkit-scrollbar-thumb,
+.footer::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(228, 207, 164, 0.34);
 }
 
 .section-block::before {
@@ -1538,6 +1562,14 @@ input[readonly] {
 
 .footer {
   margin-top: 2px;
+  min-height: min(700px, calc(100dvh - 126px));
+  max-height: calc(100dvh - 112px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-margin: clamp(14px, 3vh, 28px);
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(228, 207, 164, 0.35) transparent;
   text-align: center;
   color: rgba(244, 232, 215, 0.82);
   font-size: 0.92rem;
