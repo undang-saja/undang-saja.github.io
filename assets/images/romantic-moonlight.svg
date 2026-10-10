@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900" fill="none">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#49485f"/><stop offset=".5" stop-color="#8d7b96"/><stop offset="1" stop-color="#d3a6b4"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#f5dfc6" stop-opacity=".22"/><stop offset="1" stop-color="#f5dfc6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="lake" x1="400" y1="550" x2="400" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#b8a0b5"/><stop offset="1" stop-color="#70647f"/></linearGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".07"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+    <symbol id="blossom" viewBox="-25 -25 50 50"><g fill="#d9b2c1" stroke="#f4d3d9" stroke-width=".45"><ellipse cy="-8" rx="7" ry="10"/><ellipse cy="-8" rx="7" ry="10" transform="rotate(72)"/><ellipse cy="-8" rx="7" ry="10" transform="rotate(144)"/><ellipse cy="-8" rx="7" ry="10" transform="rotate(216)"/><ellipse cy="-8" rx="7" ry="10" transform="rotate(288)"/></g><circle r="3" fill="#ecd1a7"/></symbol>
+  </defs>
+  <g filter="url(#grain)">
+    <path fill="url(#sky)" d="M0 0h800v900H0z"/><circle cx="477" cy="270" r="220" fill="url(#halo)"/>
+    <path d="M502 204a63 63 0 1 0 24 111a57 57 0 0 1-24-111Z" fill="#f4dfc4"/>
+    <g fill="#f8e2c7"><circle cx="124" cy="100" r="1.7"/><circle cx="248" cy="207" r="2"/><circle cx="377" cy="82" r="1.3"/><circle cx="640" cy="142" r="1.8"/><circle cx="717" cy="330" r="1.7"/><circle cx="110" cy="345" r="1.2"/><circle cx="327" cy="354" r="1.6"/><circle cx="610" cy="389" r="1.4"/><circle cx="684" cy="77" r="1.2"/><circle cx="566" cy="104" r="1.1"/><circle cx="187" cy="269" r="1.2"/><circle cx="399" cy="194" r="1"/></g>
+    <g stroke="#ecd7c1" stroke-width="1" opacity=".8"><path d="M215 122v13m-6-6h12M615 293v13m-6-6h12M361 276v9m-4-5h8"/></g>
+    <path d="M0 530L132 451L250 515L392 472L517 534L636 460L800 525V900H0Z" fill="#756e88"/><path d="M0 572Q168 494 318 560T600 552T800 557V900H0Z" fill="#665d79"/>
+    <path d="M0 604Q204 559 400 586T800 590V900H0Z" fill="url(#lake)"/>
+    <g stroke="#eccecb" stroke-linecap="round" opacity=".32"><path d="M441 608h67m-91 23h114m-94 24h80m-104 31h119m-94 29h78m-119 35h155m-140 39h131m-163 38h186M63 649h97m497 20h90M214 728h64m339 39h101M75 817h117"/></g>
+    <path d="M800 688Q713 637 607 665L543 689L800 724Z" fill="#5d536d"/><path d="M0 766Q99 710 202 735L265 760L0 806Z" fill="#5d536d"/>
+    <path d="M0 900V79Q52 150 63 235T144 376Q179 405 193 474" stroke="#4c4459" stroke-width="19" stroke-linecap="round"/>
+    <g stroke="#56485f" stroke-linecap="round"><path d="M20 141Q130 96 245 129T390 103M59 227Q170 205 279 253T398 251M89 311Q187 321 238 378M148 121L177 65M243 130L281 80M299 126L342 174M146 220L173 168M245 240L287 195M298 254L335 304M179 336L213 292" stroke-width="5"/><path d="M3 814Q83 787 149 826M27 868Q103 853 196 891" stroke-width="8"/></g>
+    <g fill="#77617a"><path d="M144 118Q125 85 137 73Q160 90 144 118ZM228 126Q242 94 261 102Q255 126 228 126ZM316 127Q329 101 346 108Q341 133 316 127ZM156 218Q138 188 148 175Q171 197 156 218ZM296 254Q301 227 319 224Q328 246 296 254ZM197 346Q166 344 163 327Q183 316 197 346Z"/></g>
+    <use href="#blossom" x="153" y="41" width="48" height="48"/><use href="#blossom" x="259" y="56" width="44" height="44"/><use href="#blossom" x="319" y="150" width="47" height="47"/><use href="#blossom" x="361" y="79" width="52" height="52"/><use href="#blossom" x="149" y="143" width="48" height="48"/><use href="#blossom" x="268" y="175" width="40" height="40"/><use href="#blossom" x="365" y="228" width="48" height="48"/><use href="#blossom" x="310" y="281" width="47" height="47"/><use href="#blossom" x="195" y="273" width="40" height="40"/><use href="#blossom" x="216" y="354" width="47" height="47"/><use href="#blossom" x="170" y="448" width="43" height="43"/>
+    <g fill="#d2a2b6" opacity=".65"><ellipse cx="493" cy="469" rx="4" ry="8" transform="rotate(35 493 469)"/><ellipse cx="342" cy="528" rx="3" ry="7" transform="rotate(-25 342 528)"/><ellipse cx="599" cy="546" rx="4" ry="8" transform="rotate(50 599 546)"/></g>
+  </g>
+</svg>
