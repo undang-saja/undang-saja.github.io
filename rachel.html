@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8eee8" />
+    <title>Our Little Love Story ♡</title>
+    <style>
+      :root {
+        --cream: #fff9f4;
+        --pink: #f3d9d8;
+        --rose: #9e5d61;
+        --ink: #49393a;
+        --muted: #866f70;
+        --paper: #fffdfb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.7;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px clamp(18px, 5vw, 70px);
+        background: #fff9f4ef;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #eadbd5;
+      }
+      .brand {
+        font-size: 1rem;
+        color: var(--rose);
+        font-style: italic;
+      }
+      .navlinks {
+        display: flex;
+        gap: clamp(10px, 2vw, 28px);
+        font:
+          0.82rem Arial,
+          sans-serif;
+        color: var(--muted);
+      }
+      .navlinks a:hover {
+        color: var(--rose);
+      }
+      .hero {
+        min-height: 88vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 70px 22px;
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse at 50% 110%, #dba6a1 0, transparent 47%),
+          linear-gradient(155deg, #f9e8df, #f4d8d7 55%, #d9a8a2);
+      }
+      .hero:before,
+      .hero:after {
+        content: "♡";
+        position: absolute;
+        color: #fff8f2a8;
+        font-size: clamp(90px, 18vw, 220px);
+        font-weight: normal;
+      }
+      .hero:before {
+        top: 8%;
+        left: 8%;
+        transform: rotate(-18deg);
+      }
+      .hero:after {
+        bottom: 5%;
+        right: 9%;
+        transform: rotate(15deg);
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+      }
+      .eyebrow {
+        font:
+          0.78rem Arial,
+          sans-serif;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #80575a;
+      }
+      h1 {
+        font-size: clamp(3rem, 9vw, 6.5rem);
+        line-height: 1.04;
+        font-weight: normal;
+        font-style: italic;
+        margin: 15px 0;
+        color: #68464a;
+      }
+      .hero p {
+        max-width: 500px;
+        margin: 20px auto 28px;
+        color: #704f52;
+      }
+      .btn {
+        display: inline-block;
+        border: 1px solid var(--rose);
+        border-radius: 999px;
+        padding: 11px 23px;
+        background: #fff9f4a8;
+        color: #78494d;
+        cursor: pointer;
+        font:
+          0.9rem Arial,
+          sans-serif;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        background: var(--rose);
+        color: white;
+        transform: translateY(-2px);
+      }
+      section {
+        padding: 85px 22px;
+        scroll-margin-top: 65px;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: auto;
+      }
+      .section-head {
+        text-align: center;
+        margin: 0 auto 42px;
+        max-width: 650px;
+      }
+      .section-head .mini {
+        color: var(--rose);
+        font-size: 1.4rem;
+      }
+      h2 {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: normal;
+        font-style: italic;
+        line-height: 1.2;
+        margin: 5px 0 12px;
+      }
+      .section-head p {
+        color: var(--muted);
+        margin: 0;
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: center;
+      }
+      .paper {
+        background: var(--paper);
+        padding: clamp(24px, 4vw, 42px);
+        box-shadow: 0 12px 35px #9a6d6412;
+        border: 1px solid #f0e2dc;
+      }
+      .paper h3 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        font-style: italic;
+        color: var(--rose);
+        margin-top: 0;
+      }
+      .paper p {
+        color: #725f5f;
+      }
+      .photo-placeholder {
+        min-height: 330px;
+        background: linear-gradient(145deg, #e9c6bd, #f8e8dd 55%, #c58e8b);
+        overflow: hidden;
+        border: 9px solid white;
+        box-shadow: 0 12px 35px #9a6d641c;
+      }
+      .photo-placeholder img {
+        display: block;
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+      }
+      .timeline {
+        max-width: 720px;
+        margin: auto;
+        position: relative;
+      }
+      .timeline:before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 8px;
+        bottom: 8px;
+        width: 1px;
+        background: #d8a9a5;
+      }
+      .event {
+        position: relative;
+        padding: 0 0 30px 55px;
+      }
+      .event:before {
+        content: "♡";
+        position: absolute;
+        left: 4px;
+        top: 0;
+        background: var(--cream);
+        color: var(--rose);
+        font-size: 1.35rem;
+      }
+      .date {
+        font:
+          0.75rem Arial,
+          sans-serif;
+        letter-spacing: 0.1em;
+        color: var(--rose);
+        text-transform: uppercase;
+      }
+      .event h3 {
+        font-size: 1.35rem;
+        font-weight: normal;
+        margin: 3px 0;
+      }
+      .event p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .memory {
+        background: white;
+        padding: 10px 10px 18px;
+        box-shadow: 0 8px 22px #9a6d6414;
+        transform: rotate(var(--tilt, 0deg));
+        transition: 0.2s;
+      }
+      .memory:hover {
+        transform: rotate(0) translateY(-5px);
+      }
+      .memory .ph {
+        aspect-ratio: 4/5;
+        overflow: hidden;
+        background: linear-gradient(150deg, #f2d8d0, #e8c0bd, #f7e8df);
+        color: #80585b;
+      }
+      .memory .ph img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .memory:nth-child(2) .ph,
+      .memory:nth-child(5) .ph {
+        background: linear-gradient(150deg, #f6e6d9, #d9b7ae);
+      }
+      .memory .ph span {
+        font-size: 2rem;
+      }
+      .memory p {
+        text-align: center;
+        font-style: italic;
+        margin: 10px 0 0;
+        color: #76575a;
+        font-size: 0.95rem;
+      }
+      .reasons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .reason {
+        padding: 24px 18px;
+        text-align: center;
+        background: #f7e9e4;
+        border: 1px solid #efdbd5;
+      }
+      .reason span {
+        font-size: 1.5rem;
+        color: var(--rose);
+      }
+      .reason h3 {
+        font-size: 1.1rem;
+        font-weight: normal;
+        margin: 7px 0;
+      }
+      .reason p {
+        font-size: 0.92rem;
+        color: var(--muted);
+        margin: 0;
+      }
+      .letter-section {
+        background: #f5e3de;
+      }
+      .letter {
+        max-width: 700px;
+        margin: auto;
+        background: #fffaf5;
+        padding: clamp(28px, 6vw, 65px);
+        box-shadow: 0 12px 40px #8d5d5612;
+        position: relative;
+      }
+      .letter:before {
+        content: "♡";
+        position: absolute;
+        right: 25px;
+        top: 15px;
+        color: #d6a09e;
+        font-size: 2rem;
+      }
+      .letter h2 {
+        font-size: 2.2rem;
+        color: var(--rose);
+      }
+      .letter p {
+        color: #6f5959;
+      }
+      .signature {
+        font-style: italic;
+        text-align: right;
+        color: var(--rose);
+        font-size: 1.2rem;
+        margin-top: 28px;
+      }
+      .closing {
+        text-align: center;
+        background: linear-gradient(150deg, #d9a8a2, #f3d7d4);
+        padding: 100px 22px;
+      }
+      .closing h2 {
+        color: #68464a;
+      }
+      .closing p {
+        color: #704f52;
+      }
+      footer {
+        text-align: center;
+        padding: 22px;
+        color: var(--muted);
+        font:
+          0.8rem Arial,
+          sans-serif;
+      }
+      .heart {
+        position: fixed;
+        bottom: -20px;
+        z-index: 20;
+        pointer-events: none;
+        animation: float 2.5s ease-out forwards;
+        color: #b45e68;
+      }
+      @keyframes float {
+        to {
+          transform: translateY(-110vh) rotate(35deg);
+          opacity: 0;
+        }
+      }
+      @media (max-width: 700px) {
+        .navlinks {
+          gap: 10px;
+          font-size: 0.72rem;
+        }
+        .brand {
+          font-size: 0.85rem;
+        }
+        .intro-grid {
+          grid-template-columns: 1fr;
+        }
+        .photo-placeholder {
+          min-height: 260px;
+        }
+        .photo-placeholder img {
+          height: 260px;
+        }
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+        .reasons {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero {
+          min-height: 78vh;
+        }
+      }
+      @media (max-width: 420px) {
+        .navlinks a:nth-child(2) {
+          display: none;
+        }
+        .reasons {
+          grid-template-columns: 1fr;
+        }
+        .gallery {
+          gap: 9px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="brand" href="#home">♡ Our Love Story</a>
+      <div class="navlinks">
+        <a href="#cerita">Cerita</a><a href="#timeline">Timeline</a
+        ><a href="#galeri">Galeri</a><a href="#surat">Surat</a>
+      </div>
+    </nav>
+    <header class="hero" id="home">
+      <div class="hero-inner">
+        <div class="eyebrow">A little story about us</div>
+        <h1>Our Little<br />Love Story ♡</h1>
+        <p>
+          Untuk kamu, orang favoritku. Terima kasih sudah menjadi bagian paling
+          indah dari ceritaku.
+        </p>
+        <a class="btn" href="#cerita">Mulai cerita kita ↓</a>
+      </div>
+    </header>
+    <section id="cerita">
+      <div class="wrap intro-grid">
+        <div class="paper">
+          <div class="date">Untuk seseorang yang spesial</div>
+          <h3>Hai, sayang... ♡</h3>
+          <p>
+            Di antara banyak hal yang terjadi dalam hidup, salah satu hal paling
+            indah adalah ketika aku bertemu kamu.
+          </p>
+          <p>
+            Mungkin cerita kita ngga selalu sempurna. Tapi setiap tawa, obrolan
+            sederhana, dan momen kecil bersamamu punya tempat tersendiri di
+            hatiku.
+          </p>
+          <p>
+            Ini adalah halaman kecil untuk menyimpan cerita kita—supaya suatu
+            hari nanti, kita bisa melihat kembali dan tersenyum mengingat
+            semuanya.
+          </p>
+        </div>
+        <div class="photo-placeholder">
+          <img src="./img/ml.png" alt="Momen spesial kami" />
+        </div>
+      </div>
+    </section>
+    <section id="timeline">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="mini">♡</div>
+          <h2>Perjalanan Kita</h2>
+          <p>Dari awal yang sederhana sampai hari ini.</p>
+        </div>
+        <div class="timeline">
+          <article class="event">
+            <div class="date">Momen pertama</div>
+            <h3>Awal Kita Bertemu</h3>
+            <p>
+              Siapa sangka, dari sebuah game yang terlihat biasa saja bisa menjadi awal
+              dari cerita yang begitu berarti.
+            </p>
+          </article>
+          <article class="event">
+            <div class="date">Momen spesial</div>
+            <h3>Saat Aku Mulai Jatuh Cinta</h3>
+            <p>
+              Pelan-pelan, kamu menjadi orang yang paling kutunggu kabarnya dan
+              paling ingin kuceritakan hariku.
+            </p>
+          </article>
+          <article class="event">
+            <div class="date">Kenangan favorit</div>
+            <h3>Hari-Hari Bersamamu</h3>
+            <p>
+              Dari hal sederhana sampai momen yang istimewa, semuanya terasa
+              lebih menyenangkan saat ada kamu.
+            </p>
+          </article>
+          <article class="event">
+            <div class="date">Hari ini dan seterusnya</div>
+            <h3>Masih Memilih Kamu</h3>
+            <p>
+              Aku ingin terus belajar memahami kamu, tumbuh bersama kamu, dan
+              membuat lebih banyak kenangan berdua.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="galeri">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="mini">♡</div>
+          <h2>Little Moments</h2>
+          <p>Kenangan kecil yang punya arti besar.</p>
+        </div>
+        <div class="gallery">
+          <div class="memory" style="--tilt: -2deg">
+            <div class="ph">
+              <img src="./img/tantee.webp" alt="Foto 1 - Hari yang indah" />
+            </div>
+            <p>Senyumnya yang indah</p>
+          </div>
+          <div class="memory" style="--tilt: 2deg">
+            <div class="ph">
+              <img src="./img/filter.jpeg" alt="Foto 2 - Senyum favoritku" />
+            </div>
+            <p>Stiker favoritnya</p>
+          </div>
+          <div class="memory" style="--tilt: -1deg">
+            <div class="ph">
+              <img src="./img/kuku.jpg" alt="Foto 3 - Just us" />
+            </div>
+            <p>Suka Pamer Kuku</p>
+          </div>
+          <div class="memory" style="--tilt: 1deg">
+            <div class="ph">
+              <img src="./img/lucu.jpg" alt="Foto 4 - Petualangan kecil" />
+            </div>
+            <p>Filter Andalannya/p>
+          </div>
+          <div class="memory" style="--tilt: -2deg">
+            <div class="ph">
+              <img src="./img/lucu.webp" alt="Foto 5 - My favorite person" />
+            </div>
+            <p>My favorite person</p>
+          </div>
+          <div class="memory" style="--tilt: 2deg">
+            <div class="ph">
+              <img src="./img/lucu2.webp" alt="Foto 6 - More memories soon" />
+            </div>
+            <p>Always Her</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="mini">♡</div>
+          <h2>Kenapa Aku Sayang Kamu</h2>
+          <p>Bukan karena kamu harus sempurna, tapi karena kamu adalah kamu.</p>
+        </div>
+        <div class="reasons">
+          <div class="reason">
+            <span>♡</span>
+            <h3>Senyummu</h3>
+            <p>Karena senyummu bisa membuat hari biasa terasa lebih baik.</p>
+          </div>
+          <div class="reason">
+            <span>✧</span>
+            <h3>Caramu Peduli</h3>
+            <p>
+              Hal-hal kecil yang kamu lakukan sering berarti lebih dari yang
+              kamu kira.
+            </p>
+          </div>
+          <div class="reason">
+            <span>☁</span>
+            <h3>Nyaman Bersamamu</h3>
+            <p>Aku bisa menjadi diriku sendiri saat sedang bersamamu.</p>
+          </div>
+          <div class="reason">
+            <span>♡</span>
+            <h3>Tawa Kita</h3>
+            <p>
+              Aku suka bagaimana hal sederhana bisa menjadi kenangan lucu
+              bersama kamu.
+            </p>
+          </div>
+          <div class="reason">
+            <span>∞</span>
+            <h3>Kita Bertumbuh</h3>
+            <p>Kita masih belajar, dan aku senang bisa belajar bersamamu.</p>
+          </div>
+          <div class="reason">
+            <span>♥</span>
+            <h3>Kamu, Apa Adanya</h3>
+            <p>
+              Semua hal kecil yang membuatmu menjadi orang yang aku sayangi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="letter-section" id="surat">
+      <div class="letter">
+        <div class="date">A little letter from my heart</div>
+        <h2>Surat untuk Rachel ♡</h2>
+        <p>Sayangku,</p>
+        <p>
+          Terima kasih sudah hadir di hidupku. Terima kasih untuk waktu,
+          perhatian, tawa, dan hal-hal sederhana yang mungkin terlihat kecil,
+          tapi selalu berarti buatku.
+        </p>
+        <p>
+          Aku tahu kita ngga akan selalu punya hari yang sempurna. Akan ada
+          saatnya kita lelah, salah paham, atau punya pendapat yang berbeda.
+          Tapi aku berharap kita selalu mau mendengarkan, saling mengerti, dan
+          memperbaiki semuanya bersama.
+        </p>
+        <p>
+          Aku ngga bisa menjanjikan bahwa semuanya akan selalu mudah. Tapi aku
+          ingin terus berusaha menjadi seseorang yang bisa kamu percaya, tempat
+          kamu bercerita, dan orang yang ikut bahagia melihatmu tumbuh.
+        </p>
+        <p>
+          Kalau suatu hari kamu lupa betapa berharganya dirimu, semoga halaman
+          kecil ini bisa mengingatkanmu: kamu dicintai, kamu berarti, dan aku
+          bersyukur cerita kita dipertemukan.
+        </p>
+        <p class="signature">
+          Dengan segenap sayangku, ♡<br /><span id="signatureName"
+            >Seseorang yang menyayangimu</span
+          >
+        </p>
+      </div>
+    </section>
+    <section class="closing">
+      <div class="wrap">
+        <div class="eyebrow">And this is only the beginning</div>
+        <h2>To more memories with you ♡</h2>
+        <p>
+          Terima kasih sudah menjadi bagian dari ceritaku.<br />Semoga kita
+          masih punya banyak halaman untuk ditulis bersama.
+        </p>
+        <button class="btn" id="loveButton">
+          Klik kalau kamu sayang aku ♡
+        </button>
+        <p
+          id="surprise"
+          aria-live="polite"
+          style="min-height: 30px; font-style: italic"
+        ></p>
+      </div>
+    </section>
+    <footer>Dibuat dengan ♡, khusus untuk kamu.</footer>
+    <script>
+      document.getElementById("loveButton").addEventListener("click", () => {
+        document.getElementById("surprise").textContent =
+          "Yeay! Kalau boleh memilih lagi, aku tetap memilih kamu. ♡";
+        for (let i = 0; i < 16; i++) {
+          const h = document.createElement("span");
+          h.className = "heart";
+          h.textContent = ["♡", "♥", "✧"][i % 3];
+          h.style.left = Math.random() * 100 + "vw";
+          h.style.fontSize = 16 + Math.random() * 24 + "px";
+          h.style.animationDelay = Math.random() * 0.7 + "s";
+          document.body.appendChild(h);
+          setTimeout(() => h.remove(), 3300);
+        }
+      });
+    </script>
+  </body>
+</html>
